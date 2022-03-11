@@ -1,0 +1,106 @@
+/**
+ * Foudation / Base
+ *
+ * HMTLタグの初期化
+ */
+
+*::selection {
+  background: rgba(0, 0, 0, .1);
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  background: var(--color-base);
+  color: var(--color-black);
+  font-size: $font-size-100;
+  -moz-font-feature-settings: "palt";
+  -webkit-font-feature-settings: "palt";
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+
+  &::after {
+    background: rgba(#151414, 0.5);;
+    content: '';
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    transition: opacity .5s $cubic, visibility .5s $cubic;
+    height: 100vh;
+    width: 100vw;
+    z-index: map-get($z-index, navigation-mask);
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  word-break: break-all;
+}
+
+select {
+  line-height: 1.1em;
+}
+
+img {
+  object-fit: cover;
+  width: auto;
+  max-width: 100%;
+}
+
+p {
+  line-height: 2em;
+  text-align: justify;
+}
+
+strong {
+  font-weight: 500;
+}
+
+a {
+  color: inherit;
+  transition: opacity .15s ease-out;
+}
+
+button {
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+textarea, input, select {
+  font-size: $font-size-100;
+
+  &::placeholder {
+    color: var(--color-gray-300);
+  }
+}
+
+select {
+  color: var(--color-black);
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=time]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+// iOS Safariの画面の高さ問題を解消する
+_::-webkit-full-page-media, _:future, :root body {
+  height: -webkit-fill-available;
+}
+
+// iOS SafariにおいてTap Delayを抑制
+a, area, button, [role=button], input:not([type=range]),
+label, select, summary, textarea {
+  touch-action: manipulation;
+}
