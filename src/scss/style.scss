@@ -1,8 +1,8 @@
 @charset 'utf-8';  
 
-/*---------------------------------
-  * Foundation
----------------------------------*/
+/*
+  Foundation
+---------------------------------------------------*/
 @import 'foundation/reset';
 @import 'foundation/font';
 @import 'foundation/color';
@@ -10,27 +10,27 @@
 @import 'foundation/mixin';
 @import 'foundation/base';
 
-/*---------------------------------
-  * Layout
----------------------------------*/
+/*
+  Layout
+---------------------------------------------------*/
 @import 'layout/header';
 @import 'layout/content';
 @import 'layout/footer';
 
-/*---------------------------------
-  * Object
----------------------------------*/
-/*---------- Component ----------*/
+/*
+  Object
+---------------------------------------------------*/
+/*------------------- Component -------------------*/
 /**
  * Actions
  */
 @import 'object/component/actions/button';
 
-/*----------- Project -----------*/
+/*-------------------- Project --------------------*/
 /**
  * Common
  */
 // @import 'object/project/common/navigation-drawer';
 
-/*----------- Utility -----------*/
+/*-------------------- Utility --------------------*/
 @import 'object/utility/tools';
